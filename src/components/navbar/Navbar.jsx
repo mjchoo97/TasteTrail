@@ -11,7 +11,8 @@ const Navbar = () => {
         </div>
 
       <div className={styles.links}>
-         <Link href="/receipelist">Recipes</Link>
+         <Link href="/allrecipe">Recipes</Link>
+         <Link href="/newrecipe">New</Link>
         <AuthLinks/>
       </div>
     </div>
