@@ -18,7 +18,7 @@ const Recipelist = (props) => {
   return (
     <div className={styles.container} onClick={handleClick}>
       <div className={styles.imageContainer}>
-        <Image  src="/foodsample.jpg" alt = "" fill className={styles.img}/>
+        <Image  src="/foodsample.jpg" className ={styles.imgg} alt = "" fill/>
         <div className ={styles.textContainer}>
           <div className = {styles.category}>
             {category.toUpperCase()}

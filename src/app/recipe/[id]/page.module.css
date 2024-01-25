@@ -1,0 +1,140 @@
+.container{
+    min-height: 100vh;
+    background-color: white;
+    padding: 20px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foodName{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.imgWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+
+.imgg{
+    object-fit: cover;
+}
+
+.imgContainer{
+    width: 700px;
+    height: 500px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.ingTitle{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    margin-bottom: 20px; 
+}
+
+.ingredientContainer{
+    padding-left: 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding:30px;
+    border-bottom: solid 1px rgb(185, 182, 182);
+}
+
+.ingWrapper{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(109, 107, 107);
+}
+
+
+.adjust{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.input{
+    margin-left: 20px;
+    width: 60px;
+    height:30px;
+    font-size: 20px;
+    text-align: center; 
+}
+
+.instuContainer{
+    padding-left: 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    border-bottom: solid 1px rgb(185, 182, 182);
+    max-width: 100%;
+    padding-bottom: 30px;
+}
+
+.instuWrapper{
+    display: flex;
+    align-items: top;
+    padding-right: 20px;
+}
+
+.stepscount{
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 15px;
+    width: 40px;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 144, 37);
+    font-weight: bold;
+    color: white;
+    margin-right: 20px;
+    flex:1
+}
+
+.steps{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(109, 107, 107);
+    flex:30
+}
+
+
+@media (max-width: 768px){
+    .steps{
+        font-size: 20px;
+        flex:28;
+    }
+
+    .stepscount{
+        flex:2;
+
+    }
+  }
+
+
+
+  
+  
+  @media (max-width: 640px){
+    .steps{
+        font-size: 20px;
+        flex:20;
+    }
+
+    .stepscount{
+        flex:2;
+
+    }
+  }

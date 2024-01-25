@@ -13,6 +13,21 @@ const testRecipes =[
     "id":"2",
     "name": "Bread",
     "category": "Dessert"
+  },
+  {
+    "id":"2",
+    "name": "Bread",
+    "category": "Dessert"
+  },
+  {
+    "id":"2",
+    "name": "Bread",
+    "category": "Dessert"
+  },
+  {
+    "id":"2",
+    "name": "Bread",
+    "category": "Dessert"
   }
 ]
 
@@ -20,6 +35,9 @@ const Searchpage = ({ params }) => {
   const { slug } = params;
   return (
     <div className={styles.container}>
+      <div className = {styles.title}>
+        Receipe Menu
+      </div>
       <div className={styles.searchText}>
         <div>You have searched for {slug.replace("%20", " ")}</div>
       </div>
