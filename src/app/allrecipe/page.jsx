@@ -50,7 +50,7 @@ const AllRecipe = () => {
           </div>
           <div className={styles.recipelist}>
             {testRecipes.map((recipe) =>
-              <Recipelist {...recipe}/>
+              <Recipelist key={recipe.id} {...recipe}/>
             )}
           </div>
         </div>

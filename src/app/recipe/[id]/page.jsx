@@ -40,7 +40,7 @@ const Receipe = () => {
         </div>
         {testobj.ingredients.map((ing,ind)=>{
           return(
-            <div className = {styles.ingWrapper}>
+            <div key = {ind} className = {styles.ingWrapper}>
               <div className ={styles.count}>{(ind+1).toString()+`. ` + (ing.volume*servings) +` `+ing.unit}</div>
               <div className = {styles.material}>{ing.ingredient}</div>
             </div>
@@ -51,7 +51,7 @@ const Receipe = () => {
       <div className = {styles.instuContainer}>
         {testobj.insturctions.map((step,index) =>{
           return(
-            <div className = {styles.instuWrapper}>
+            <div key = {index} className = {styles.instuWrapper}>
               <div className ={styles.stepscount}>{index+1}</div>
               <div className = {styles.steps}>{step}</div>
             </div>

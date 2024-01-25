@@ -43,7 +43,7 @@ const Searchpage = ({ params }) => {
       </div>
       <div className={styles.recipelist}>
         {testRecipes.map((recipe) =>
-          <Recipelist {...recipe}/>
+          <Recipelist key={receipe.id} {...recipe}/>
         )}
       </div>
     </div>
