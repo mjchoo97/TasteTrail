@@ -26,6 +26,8 @@ const AllRecipe = () => {
   //   fetcher
   // );
 
+  const isLoading = true;
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>All Menu</div>
