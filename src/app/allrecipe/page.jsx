@@ -9,7 +9,7 @@ import useSWR from "swr";
 import AllRecipeSkeleton from "@/components/allrecipeskeleton/AllRecipeSkeleton";
 
 const fetcher = async (url) => {
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url, { next: { revalidate: 10 } });
 
   if (!res.ok) {
     throw new Error("wrong");
