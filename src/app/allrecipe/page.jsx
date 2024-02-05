@@ -9,7 +9,7 @@ import useSWR from "swr";
 import AllRecipeSkeleton from "@/components/allrecipeskeleton/AllRecipeSkeleton";
 
 const fetcher = async (url) => {
-  const res = await fetch(url, { next: { revalidate: 10 } });
+  const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("wrong");
@@ -18,7 +18,7 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-console.log(process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipe");
+console.log(process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipes");
 
 //FETCH DATA WITH API
 const AllRecipe = () => {
