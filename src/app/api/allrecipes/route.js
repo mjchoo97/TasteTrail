@@ -3,11 +3,11 @@ import { Recipe } from "../../../../lib/models";
 import { connectToDB } from "../../../../lib/utils";
 
 export const GET = async (req) => {
-  const body = await req.json();
+  //   const body = await req.json();
   try {
     connectToDB();
     const recipes = await Recipe.find();
-    // console.log(recipes);
+    console.log(recipes);
     return NextResponse.json(recipes, { status: "200" });
   } catch (err) {
     console.log(err);
