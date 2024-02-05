@@ -6,7 +6,7 @@ export const GET = async (request) => {
   try {
     connectToDB();
     const recipes = await Recipe.find();
-    console.log(recipes);
+    // console.log(recipes);
     return NextResponse.json(recipes);
   } catch (err) {
     console.log(err);

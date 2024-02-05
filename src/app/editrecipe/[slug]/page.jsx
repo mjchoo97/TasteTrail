@@ -7,15 +7,15 @@ import { slugify } from "../../../../lib/utils";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
 
-// const fetcher = async (url) => {
-//   const res = await fetch(url, { cache: "no-store" });
+const fetcher = async (url) => {
+  const res = await fetch(url, { cache: "no-store" });
 
-//   if (!res.ok) {
-//     throw new Error("wrong");
-//   }
+  if (!res.ok) {
+    throw new Error("wrong");
+  }
 
-//   return res.json();
-// };
+  return res.json();
+};
 
 const EditRecipe = ({ params }) => {
   const { slug } = params;
@@ -106,16 +106,16 @@ const EditRecipe = ({ params }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // editData();
+    editData();
     router.push(`/recipe/${slugify(name)}`);
   };
 
   const router = useRouter();
 
-  // const { data, error, isLoading } = useSWR(
-  //   process.env.NEXT_PUBLIC_API_ENDPOINT + `recipe/${slug}`,
-  //   fetcher
-  // );
+  const { data, error, isLoading } = useSWR(
+    process.env.NEXT_PUBLIC_API_ENDPOINT + `recipe/${slug}`,
+    fetcher
+  );
 
   useEffect(() => {
     if (data) {
