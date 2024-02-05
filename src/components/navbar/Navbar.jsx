@@ -15,7 +15,7 @@ const Navbar = () => {
   const linkoption = [
     {
       title: "Recipes",
-      link: "/allrecipe",
+      link: "/recipelist",
     },
     {
       title: "New",

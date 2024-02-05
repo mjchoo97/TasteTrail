@@ -6,7 +6,7 @@ export const GET = async (req) => {
   try {
     await connectToDB(); // Assuming connectToDB is an asynchronous operation, make sure to await it
     const recipes = await Recipe.find();
-    return NextResponse.json({ recipes }, { status: 200 }); // Corrected the response object
+    return NextResponse.json(recipes); // Corrected the response object
   } catch (err) {
     console.error(err); // Changed console.log to console.error for better visibility of errors
     throw new Error("Failed to fetch recipes");
