@@ -18,8 +18,9 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-//FETCH DATA WITH API
+console.log(process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipe");
 
+//FETCH DATA WITH API
 const AllRecipe = () => {
   const { data, error, isLoading } = useSWR(
     process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipe",
