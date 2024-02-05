@@ -63,35 +63,35 @@ const NewRecipe = () => {
   };
 
   const postData = async () => {
-    // const res = await fetch(
-    //   process.env.NEXT_PUBLIC_API_ENDPOINT + "newrecipe",
-    //   {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       name: name,
-    //       category: cat,
-    //       ingredients: ingredients,
-    //       instructions: instructions,
-    //       recipeslugs: slugify(name),
-    //     }),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-    // if (!res.ok) {
-    //   toast.error("Fail to create recipe");
-    //   throw new Error("wrong");
-    // }
-    // toast.success("Successfully created recipe", {
-    //   position: "top-center",
-    // });
-    // return res.json();
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_API_ENDPOINT + "newrecipe",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          category: cat,
+          ingredients: ingredients,
+          instructions: instructions,
+          recipeslugs: slugify(name),
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    if (!res.ok) {
+      toast.error("Fail to create recipe");
+      throw new Error("wrong");
+    }
+    toast.success("Successfully created recipe", {
+      position: "top-center",
+    });
+    return res.json();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // postData();
+    postData();
     router.push(`/recipe/${slugify(name)}`);
   };
 
