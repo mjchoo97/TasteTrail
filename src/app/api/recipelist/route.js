@@ -3,6 +3,7 @@ import { Recipe } from "../../../../lib/models";
 import { connectToDB } from "../../../../lib/utils";
 
 export const GET = async (req) => {
+  console.log(req.url);
   try {
     await connectToDB(); // Assuming connectToDB is an asynchronous operation, make sure to await it
     const recipes = await Recipe.find();
@@ -12,5 +13,3 @@ export const GET = async (req) => {
     throw new Error("Failed to fetch recipes");
   }
 };
-
-export const dynamic = "auto";
