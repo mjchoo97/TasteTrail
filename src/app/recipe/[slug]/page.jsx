@@ -47,6 +47,9 @@ const Receipe = ({ params }) => {
             <div className={styles.editContainer} onClick={handleEdit}>
               <Image src="/edit.png" alt="" fill className={styles.editpng} />
             </div>
+            <div className={styles.editContainer} onClick={handleEdit}>
+              <Image src="/bin.png" alt="" fill className={styles.editpng} />
+            </div>
           </div>
           <div className={styles.imgWrapper}>
             <div className={styles.imgContainer}>

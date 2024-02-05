@@ -154,3 +154,23 @@
     font-size: 15px;
   }
 }
+
+@media (max-width: 475px) {
+  .steps {
+    font-size: 18px;
+    flex: 19;
+  }
+
+  .input {
+    width: 50px;
+  }
+
+  .stepscount {
+    height: 30px;
+  }
+
+  .imgContainer {
+    width: 700px;
+    height: 400px;
+  }
+}
