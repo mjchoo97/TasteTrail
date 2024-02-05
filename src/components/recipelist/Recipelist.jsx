@@ -6,19 +6,19 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation'
 
 const Recipelist = (props) => {
-  const {category,name,id} = props
+  const {category,name,recipeslugs} = props
 
   const router = useRouter()
   
 
   const handleClick =(e) =>{
-    router.push(`/recipe/${id}`)
+    router.push(`/recipe/${recipeslugs}`)
   }
-  console.log(name)
+  
   return (
     <div className={styles.container} onClick={handleClick}>
       <div className={styles.imageContainer}>
-        <Image  src="/foodsample.jpg" className ={styles.imgg} alt = "" fill/>
+        <Image  priority={true}  src="/foodsample.jpg" className ={styles.imgg} alt = "" fill/>
         <div className ={styles.textContainer}>
           <div className = {styles.category}>
             {category.toUpperCase()}

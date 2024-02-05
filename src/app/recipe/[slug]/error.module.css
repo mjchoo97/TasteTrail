@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.errortag {
+  font-size: 30px;
+  color: rgb(129, 129, 129);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
