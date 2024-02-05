@@ -8,7 +8,7 @@ export const GET = async (req) => {
     connectToDB();
     const recipes = await Recipe.find();
     console.log(recipes);
-    return NextResponse.json(recipes, { status: "200" });
+    return new NextResponse.json(recipes, { status: "200" });
   } catch (err) {
     console.log(err);
     throw new Error("Failed to fetch recipes");
