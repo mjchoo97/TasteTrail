@@ -18,12 +18,12 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-console.log(process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipes");
+console.log(process.env.NEXT_PUBLIC_API_ENDPOINT + "recipelist");
 
 //FETCH DATA WITH API
 const AllRecipe = () => {
   const { data, error, isLoading } = useSWR(
-    process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipes",
+    process.env.NEXT_PUBLIC_API_ENDPOINT + "recipelist",
     fetcher
   );
 
