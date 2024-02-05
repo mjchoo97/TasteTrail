@@ -8,23 +8,23 @@ import { connectToDB } from "../../../lib/utils";
 import useSWR from "swr";
 import AllRecipeSkeleton from "@/components/allrecipeskeleton/AllRecipeSkeleton";
 
-const fetcher = async (url) => {
-  const res = await fetch(url, { cache: "no-store" });
+// const fetcher = async (url) => {
+//   const res = await fetch(url, { cache: "no-store" });
 
-  if (!res.ok) {
-    throw new Error("wrong");
-  }
+//   if (!res.ok) {
+//     throw new Error("wrong");
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 //FETCH DATA WITH API
 
 const AllRecipe = () => {
-  const { data, error, isLoading } = useSWR(
-    process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipe",
-    fetcher
-  );
+  // const { data, error, isLoading } = useSWR(
+  //   process.env.NEXT_PUBLIC_API_ENDPOINT + "allrecipe",
+  //   fetcher
+  // );
 
   return (
     <div className={styles.container}>

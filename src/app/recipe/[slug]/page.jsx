@@ -8,13 +8,11 @@ import { useRouter } from "next/navigation";
 import { Toaster } from "react-hot-toast";
 
 const fetcher = async (url) => {
-  const res = await fetch(url, { next: { revalidate: 3600 } });
-
-  if (!res.ok) {
-    throw new Error("wrong");
-  }
-
-  return res.json();
+  // const res = await fetch(url, { next: { revalidate: 3600 } });
+  // if (!res.ok) {
+  //   throw new Error("wrong");
+  // }
+  // return res.json();
 };
 
 const Receipe = ({ params }) => {
@@ -25,10 +23,10 @@ const Receipe = ({ params }) => {
 
   console.log(servings);
   //FETCH DATA WITH API
-  const { data, error, isLoading } = useSWR(
-    process.env.NEXT_PUBLIC_API_ENDPOINT + `recipe/${slug}`,
-    fetcher
-  );
+  // const { data, error, isLoading } = useSWR(
+  //   process.env.NEXT_PUBLIC_API_ENDPOINT + `recipe/${slug}`,
+  //   fetcher
+  // );
 
   const router = useRouter();
 
