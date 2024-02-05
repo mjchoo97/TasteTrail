@@ -3,14 +3,12 @@ import { Recipe } from "../../../../lib/models";
 import { connectToDB } from "../../../../lib/utils";
 
 export const GET = async (req) => {
-  //   const body = await req.json();
   try {
-    connectToDB();
+    await connectToDB(); // Assuming connectToDB is an asynchronous operation, make sure to await it
     const recipes = await Recipe.find();
-    // console.log(recipes);
-    return new NextResponse.json(recipes);
+    return NextResponse.json({ recipes }, { status: 200 }); // Corrected the response object
   } catch (err) {
-    console.log(err);
+    console.error(err); // Changed console.log to console.error for better visibility of errors
     throw new Error("Failed to fetch recipes");
   }
 };

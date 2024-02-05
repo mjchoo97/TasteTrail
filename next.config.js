@@ -8,9 +8,7 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    serverActions: true,
-  },
+
   // env: {
   //     API_ENDPOINT: process.env.API_ENDPOINT,
   // },
