@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Recipe } from "../../../../lib/models";
 import { connectToDB } from "../../../../lib/utils";
 
-export const GET = async () => {
+export const GET = async (req) => {
   try {
     await connectToDB(); // Assuming connectToDB is an asynchronous operation, make sure to await it
     const recipes = await Recipe.find();
@@ -12,3 +12,5 @@ export const GET = async () => {
     throw new Error("Failed to fetch recipes");
   }
 };
+
+export const dynamic = "auto";
