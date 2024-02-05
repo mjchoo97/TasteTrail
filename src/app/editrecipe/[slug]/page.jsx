@@ -106,7 +106,7 @@ const EditRecipe = ({ params }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editData();
+    // editData();
     router.push(`/recipe/${slugify(name)}`);
   };
 

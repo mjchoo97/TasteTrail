@@ -94,7 +94,7 @@ const NewRecipe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData();
+    // postData();
     router.push(`/recipe/${slugify(name)}`);
   };
 
