@@ -237,7 +237,7 @@ const EditRecipe = ({ params }) => {
                 <>
                   {instructions.map((instruction, i) => {
                     return (
-                      <div className={styles.stepcontainer}>
+                      <div key={i} className={styles.stepcontainer}>
                         <button
                           type="button"
                           className={styles.delete}
