@@ -1,0 +1,86 @@
+.container {
+  background-color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.recipelist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.recipelist:after {
+  content: "";
+  flex: auto;
+}
+
+.title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.norescontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+}
+
+.noresults {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: rgb(129, 129, 129);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.searchButton {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(24, 23, 23);
+  font-size: 20px;
+}
+
+.searchButton:hover {
+  background-color: rgb(52, 230, 82);
+}
+
+@media (max-width: 1356px) {
+  .recipelist {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .recipelist {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .recipelist {
+    gap: 10px;
+  }
+
+  .recipelist:after {
+    content: "";
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .recipelist {
+    justify-content: center;
+  }
+
+  .recipelist:after {
+    content: "";
+    display: none;
+  }
+}

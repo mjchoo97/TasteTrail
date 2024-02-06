@@ -80,19 +80,21 @@ const NewRecipe = () => {
       }
     );
     if (!res.ok) {
-      toast.error("Fail to create recipe");
+      // toast.error("Fail to create recipe");
+
       throw new Error("wrong");
     }
-    toast.success("Successfully created recipe", {
-      position: "top-center",
-    });
+    router.push(`/recipe/${slugify(name)}`);
     return res.json();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData();
-    router.push(`/recipe/${slugify(name)}`);
+    toast.promise(postData(), {
+      loading: "Saving...",
+      success: <b>Successfully added!</b>,
+      error: <b>Could not add.</b>,
+    });
   };
 
   const router = useRouter();

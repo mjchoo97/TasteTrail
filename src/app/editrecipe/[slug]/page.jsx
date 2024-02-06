@@ -98,15 +98,16 @@ const EditRecipe = ({ params }) => {
       throw new Error("wrong");
     }
 
-    toast.success("Successfully updated", {
-      position: "top-center",
-    });
     return res.json();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editData();
+    toast.promise(editData(), {
+      loading: "Saving...",
+      success: <b>Successfully updated!</b>,
+      error: <b>Could not update.</b>,
+    });
     router.push(`/recipe/${slugify(name)}`);
   };
 

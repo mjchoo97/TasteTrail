@@ -103,4 +103,8 @@
   .menucontainer {
     display: block;
   }
+
+  .mobileLinks {
+    margin-right: -10px;
+  }
 }

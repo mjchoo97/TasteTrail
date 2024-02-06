@@ -13,7 +13,8 @@ const Searchbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/searchpage/${slugify(searchText)}`);
+    // router.push(`/searchpage/${slugify(searchText)}`);
+    router.push(`/searchpage?search=${slugify(searchText)}`);
   };
 
   return (
