@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
+import Loadingskeleton from "@/components/loadingskeleton/Loadingskeleton";
+import { foodSampleImg } from "../../../../lib/foodsample";
 
 const fetcher = async (url) => {
   const res = await fetch(
@@ -26,6 +28,7 @@ const Receipe = ({ params }) => {
   console.log(slug);
 
   const [servings, setServings] = useState(1);
+  const [imurl, setImurl] = useState("");
 
   console.log(servings);
   // FETCH DATA WITH API
@@ -66,10 +69,18 @@ const Receipe = ({ params }) => {
     router.push("/recipelist");
   };
 
+  console.log(imurl);
+
+  useEffect(() => {
+    //Runs only on the first render
+    const imageurl = foodSampleImg();
+    setImurl(imageurl);
+  }, []);
+
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <></>
+        <Loadingskeleton />
       ) : (
         <>
           <div className={styles.titlecontainer}>
@@ -83,12 +94,7 @@ const Receipe = ({ params }) => {
           </div>
           <div className={styles.imgWrapper}>
             <div className={styles.imgContainer}>
-              <Image
-                src="/foodsample.jpg"
-                alt=""
-                fill
-                className={styles.imgg}
-              />
+              <Image src={imurl} alt="" fill className={styles.imgg} />
             </div>
           </div>
           <div className={styles.ingTitle}>Ingredients:</div>

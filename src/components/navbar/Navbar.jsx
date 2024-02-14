@@ -41,7 +41,7 @@ const Navbar = () => {
             {option.title}
           </Link>
         ))}
-        <AuthLinks />
+        {/* <AuthLinks /> */}
       </div>
       {open && (
         <div className={styles.mobileLinks}>

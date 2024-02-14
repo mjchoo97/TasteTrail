@@ -6,6 +6,7 @@
   flex-direction: column;
   background-image: url("/background.jpg");
   background-size: cover;
+  background-position: top;
 }
 
 .search {
@@ -55,5 +56,15 @@
 @media (max-width: 640px) {
   .hometext {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 475px) {
+  .hometext {
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+    color: rgb(241, 241, 239);
   }
 }

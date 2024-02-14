@@ -47,3 +47,10 @@
     width: 300px;
   }
 }
+
+@media (max-width: 475px) {
+  .input {
+    width: 250px;
+    height: 40px;
+  }
+}

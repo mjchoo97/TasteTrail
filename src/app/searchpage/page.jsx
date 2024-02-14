@@ -7,6 +7,8 @@ import { useParams, useSearchParams } from "next/navigation";
 import Recipelist from "@/components/recipelist/Recipelist";
 import { useRouter } from "next/navigation";
 import AllRecipeSkeleton from "@/components/allrecipeskeleton/AllRecipeSkeleton";
+import loading from "@/app/loading.js";
+import Loadingskeleton from "@/components/loadingskeleton/Loadingskeleton";
 
 const fetcher = async (url) => {
   const res = await fetch(url, { cache: "no-store" });
@@ -38,7 +40,7 @@ const SearchPage = () => {
   return (
     <>
       {isLoading ? (
-        <></>
+        <Loadingskeleton />
       ) : (
         <div className={styles.container}>
           <div className={styles.title}>Receipe Menu</div>

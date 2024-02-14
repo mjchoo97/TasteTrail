@@ -39,7 +39,7 @@
 }
 
 .imgg {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .imgContainer {
@@ -47,6 +47,7 @@
   height: 500px;
   position: relative;
   margin-bottom: 30px;
+  border-radius: 20px;
 }
 
 .ingTitle {
@@ -172,5 +173,14 @@
   .imgContainer {
     width: 700px;
     height: 400px;
+  }
+
+  .foodName {
+    font-size: 45px;
+    margin-bottom: 30px;
+  }
+
+  .ingTitle {
+    font-size: 30px;
   }
 }
