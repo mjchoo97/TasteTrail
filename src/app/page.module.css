@@ -28,6 +28,10 @@
   overflow: hidden;
 }
 
+.imgg1 {
+  filter: blur(5px);
+}
+
 .welcomeimgcontainer2 {
   position: relative;
   width: 400px;
@@ -58,11 +62,23 @@
   .recipelist {
     gap: 10px;
   }
+
+  .welcomeimgcontainer {
+    width: 660px;
+  }
+
+  .welcomeimgcontainer2 {
+    width: 300px;
+  }
 }
 
 @media (max-width: 1024px) {
   .welcomeimgcontainer2 {
     display: none;
+  }
+
+  .welcomeimgcontainer {
+    width: 100%;
   }
 }
 
@@ -80,9 +96,5 @@
     right: 20px;
     color: white;
     font-weight: bold;
-  }
-
-  .imgg {
-    filter: blur(5px);
   }
 }

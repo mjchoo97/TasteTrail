@@ -6,6 +6,7 @@ import useSWR from "swr";
 import { slugify } from "../../../../lib/utils";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
+import { revalidatePath } from "next/cache";
 
 const fetcher = async (url) => {
   const res = await fetch(url, { cache: "no-store" });
@@ -35,24 +36,24 @@ const EditRecipe = ({ params }) => {
   const ingField = [
     {
       id: 1,
+      name: "ingredient",
+      type: "text",
+      placeholder: "Ingredient",
+      label: "Ingredient",
+    },
+    {
+      id: 2,
       name: "volume",
       type: "text",
       placeholder: "Amount",
       label: "Amount",
     },
     {
-      id: 2,
+      id: 3,
       name: "unit",
       type: "text",
       placeholder: "Unit",
       label: "Unit",
-    },
-    {
-      id: 3,
-      name: "ingredient",
-      type: "text",
-      placeholder: "Ingredient",
-      label: "Ingredient",
     },
   ];
 
@@ -202,13 +203,7 @@ const EditRecipe = ({ params }) => {
                         X
                       </button>
                       <div className={styles.addeding}>
-                        {(ind + 1).toString() +
-                          `. ` +
-                          ing.volume +
-                          ` ` +
-                          ing.unit +
-                          ` ` +
-                          ing.ingredient}
+                        {ing.volume + ` ` + ing.unit + ` ` + ing.ingredient}
                       </div>
                     </div>
                   );

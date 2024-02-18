@@ -10,7 +10,6 @@ import Image from "next/image";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathName = usePathname();
-  console.log(pathName);
 
   const linkoption = [
     {

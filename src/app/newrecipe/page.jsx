@@ -23,24 +23,24 @@ const NewRecipe = () => {
   const ingField = [
     {
       id: 1,
+      name: "ingredient",
+      type: "text",
+      placeholder: "Ingredient",
+      label: "Ingredient",
+    },
+    {
+      id: 2,
       name: "volume",
       type: "text",
       placeholder: "Amount",
       label: "Amount",
     },
     {
-      id: 2,
+      id: 3,
       name: "unit",
       type: "text",
       placeholder: "Unit",
       label: "Unit",
-    },
-    {
-      id: 3,
-      name: "ingredient",
-      type: "text",
-      placeholder: "Ingredient",
-      label: "Ingredient",
     },
   ];
 
@@ -158,13 +158,7 @@ const NewRecipe = () => {
                       X
                     </button>
                     <div className={styles.addeding}>
-                      {(ind + 1).toString() +
-                        `. ` +
-                        ing.volume +
-                        ` ` +
-                        ing.unit +
-                        ` ` +
-                        ing.ingredient}
+                      {ing.volume + ` ` + ing.unit + ` ` + ing.ingredient}
                     </div>
                   </div>
                 );

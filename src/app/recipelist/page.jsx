@@ -7,6 +7,7 @@ import { connect } from "mongoose";
 import { connectToDB } from "../../../lib/utils";
 import useSWR from "swr";
 import AllRecipeSkeleton from "@/components/allrecipeskeleton/AllRecipeSkeleton";
+import Pagination from "@/components/pagination/Pagination";
 
 const fetcher = async (url) => {
   const res = await fetch(url, { cache: "no-store" });
@@ -18,12 +19,11 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-console.log(process.env.NEXT_PUBLIC_API_ENDPOINT + "recipelist");
-
 //FETCH DATA WITH API
-const AllRecipe = () => {
+const AllRecipe = ({ searchParams }) => {
+  const page = parseInt(searchParams.page) || 1;
   const { data, error, isLoading } = useSWR(
-    process.env.NEXT_PUBLIC_API_ENDPOINT + "recipelist",
+    process.env.NEXT_PUBLIC_API_ENDPOINT + `recipelist?page=${page}`,
     fetcher
   );
 
@@ -33,10 +33,13 @@ const AllRecipe = () => {
       {isLoading ? (
         <AllRecipeSkeleton />
       ) : (
-        <div className={styles.recipelist}>
-          {data.map((recipe) => (
-            <Recipelist key={recipe.id} {...recipe} />
-          ))}
+        <div className={styles.recipelistcontainer}>
+          <div className={styles.recipelist}>
+            {data.recipes.map((recipe) => (
+              <Recipelist key={recipe.id} {...recipe} />
+            ))}
+          </div>
+          <Pagination page={page} count={data.count} />
         </div>
       )}
     </div>

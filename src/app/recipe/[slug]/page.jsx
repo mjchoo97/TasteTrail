@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import Loadingskeleton from "@/components/loadingskeleton/Loadingskeleton";
 import { foodSampleImg } from "../../../../lib/foodsample";
+import { revalidatePath } from "next/cache";
 
 const fetcher = async (url) => {
   const res = await fetch(
@@ -115,11 +116,7 @@ const Receipe = ({ params }) => {
               return (
                 <div key={ind} className={styles.ingWrapper}>
                   <div className={styles.count}>
-                    {(ind + 1).toString() +
-                      `. ` +
-                      ing.volume * servings +
-                      ` ` +
-                      ing.unit}
+                    {ing.volume * servings + ` ` + ing.unit}
                   </div>
                   <div className={styles.material}>{ing.ingredient}</div>
                 </div>
@@ -131,8 +128,9 @@ const Receipe = ({ params }) => {
             {data.instructions.map((step, index) => {
               return (
                 <div key={index} className={styles.instuWrapper}>
-                  <div className={styles.stepscount}>{index + 1}</div>
-                  <div className={styles.steps}>{step}</div>
+                  <div className={styles.steps}>
+                    {index + 1}. {step}
+                  </div>
                 </div>
               );
             })}

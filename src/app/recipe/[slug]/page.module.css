@@ -106,7 +106,7 @@
   padding-right: 20px;
 }
 
-.stepscount {
+/* .stepscount {
   border: 1px solid white;
   border-radius: 50%;
   font-size: 15px;
@@ -120,7 +120,7 @@
   color: white;
   margin-right: 20px;
   flex: 1;
-}
+} */
 
 .steps {
   font-size: 18px;
@@ -154,6 +154,15 @@
     width: 50px;
     font-size: 15px;
   }
+  .editContainer {
+    flex: 1;
+  }
+
+  .foodName {
+    font-size: 40px;
+    margin-bottom: 30px;
+    flex: 15;
+  }
 }
 
 @media (max-width: 475px) {
@@ -176,11 +185,20 @@
   }
 
   .foodName {
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 30px;
+    flex: 10;
+  }
+
+  .editContainer {
+    flex: 1;
   }
 
   .ingTitle {
     font-size: 30px;
+  }
+
+  .adjust {
+    font-size: 24px;
   }
 }
