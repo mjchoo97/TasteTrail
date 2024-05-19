@@ -19,6 +19,8 @@ const NewRecipe = () => {
   });
   const [instructions, setInstructions] = useState([]);
   const [instruction, setInstruction] = useState("");
+  const [isEdit, setisEdit] = useState(false);
+  const [editingField, seteditingField] = useState();
 
   const ingField = [
     {
@@ -60,6 +62,46 @@ const NewRecipe = () => {
 
   const handleDeleteSteps = (StepToDelete) => {
     setInstructions(instructions.filter((ins) => ins !== StepToDelete));
+  };
+
+  const handleRearrange = (i, dir) => {
+    const newInstructions = [...instructions];
+    console.log(i);
+    switch (dir) {
+      case "up":
+        if (i > 0) {
+          [newInstructions[i - 1], newInstructions[i]] = [
+            newInstructions[i],
+            newInstructions[i - 1],
+          ];
+        }
+        break;
+      case "down":
+        if (i < newInstructions.length - 1) {
+          [newInstructions[i], newInstructions[i + 1]] = [
+            newInstructions[i + 1],
+            newInstructions[i],
+          ];
+        }
+        break;
+    }
+
+    setInstructions(newInstructions);
+  };
+
+  const handleFieldEdit = (i) => {
+    setisEdit((prevState) => !prevState);
+    if (isEdit) {
+      seteditingField();
+    } else {
+      seteditingField(i);
+    }
+  };
+
+  const handleFieldChange = (e) => {
+    const newInstructions = [...instructions];
+    newInstructions[editingField] = e.target.value;
+    setInstructions(newInstructions);
   };
 
   const postData = async () => {
@@ -196,8 +238,42 @@ const NewRecipe = () => {
                       >
                         X
                       </button>
+                      <button
+                        type="button"
+                        className={styles.up}
+                        onClick={() => handleRearrange(i, "up")}
+                      >
+                        ^
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.down}
+                        onClick={() => handleRearrange(i, "down")}
+                      >
+                        v
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.editbutton}
+                        onClick={() => handleFieldEdit(i)}
+                      >
+                        <img
+                          src="/edit.png"
+                          alt="editicon"
+                          fill
+                          className={styles.editicon}
+                        />
+                      </button>
                       <div className={styles.no}>{`${i + 1}. `}</div>
-                      <div key={i}>{instruction}</div>
+                      {i === editingField ? (
+                        <input
+                          value={instruction}
+                          onChange={(e) => handleFieldChange(e)}
+                          className={styles.editinputfield}
+                        />
+                      ) : (
+                        <div key={i}>{instruction}</div>
+                      )}
                     </div>
                   );
                 })}
